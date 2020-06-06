@@ -11,7 +11,7 @@ Salesforce platform put restriction on loading JS source into Lightning Web Comp
 There are 4 steps to integrate reCAPTCHA v3 to a Lightning Web Component
 ### 1.	Create html static resource with reCAPTCHA
 reCAPTCHAv3.html
-```
+```html
 <html>
     <head>
         <title></title>reCAPTCHA html resource</title>
@@ -36,7 +36,7 @@ reCAPTCHAv3.html
 </html>
 ```
 reCAPTCHAv3.resource-meta.xml
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Public</cacheControl>
@@ -46,7 +46,7 @@ reCAPTCHAv3.resource-meta.xml
 
 ### 2.	Create Lightning Web Component with an iframe to load the static resource
 myLWC.html
-```
+```html
 <template>
     <iframe src={navigateTo} name="captchaFrame" onload={captchaLoaded}></iframe>
 </template>
@@ -54,7 +54,7 @@ myLWC.html
 
 ### 3.	Create the Javascript controller for the Lightning Web Component
 myLWC.js
-```
+```javascript
 import { LightningElement, track, api } from 'lwc';
 import pageUrl from '@salesforce/resourceUrl/reCAPTCHAv3';
 import isReCAPTCHAValid from '@salesforce/apex/reCAPTCHAv3ServerController.isReCAPTCHAValid';
@@ -95,7 +95,7 @@ export default class GoogleCapatcha extends LightningElement {
 
 ### 4.	Create Apex class to handle the server-side verification
 reCAPTCHAv3ServerController.cls
-```
+```java
 public with sharing class reCAPTCHAv3ServerController {
     public reCAPTCHAv3ServerController(){
 
