@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title></title>reCAPTCHA html resource</title>
+        <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+    </head>
+    <body>
+        <input type="hidden" name="recaptcha_response" id="recaptchaResponse"/>
+        <script type="text/javascript">
+            grecaptcha.ready(function() {
+                var reCAPTCHA_site_key = "reCAPTCHA_site_key";
+                grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+                    recaptchaResponse.value = token;
+                    if (token == "") {
+                        parent.postMessage({ action: "getCAPCAH", callCAPTCHAResponse : "NOK"}, "*");
+                    } else {
+                        parent.postMessage({ action: "getCAPCAH", callCAPTCHAResponse : token}, "*");
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
