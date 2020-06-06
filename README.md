@@ -1,5 +1,3 @@
-# reCAPTCHASalesforceLWC
-
 # How to use Google reCAPTCHA v3 in Lightning Web Component
 
 ## Limitation of Salesforce platform
