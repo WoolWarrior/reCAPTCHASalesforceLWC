@@ -12,7 +12,7 @@ reCAPTCHAv3.html
 ```html
 <html>
     <head>
-        <title></title>reCAPTCHA html resource</title>
+        <title>reCAPTCHA html resource</title>
         <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
     </head>
     <body>
